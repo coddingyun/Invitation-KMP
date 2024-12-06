@@ -66,6 +66,11 @@ kotlin {
             implementation(compose.components.uiToolingPreview)
             implementation(libs.androidx.lifecycle.viewmodel)
             implementation(libs.androidx.lifecycle.runtime.compose)
+//            implementation("com.google.android.gms:play-services-maps:18.1.0")
+//            implementation("com.google.android.gms:play-services-location:21.0.1")
+//            implementation("com.google.maps.android:maps-compose:4.4.1")
+//            implementation("com.github.chihsuanwu:google-maps-compose-web:0.3.3-alpha")
+        //implementation("androidx.emoji:emoji:28.0.0")
         }
     }
 }
@@ -99,6 +104,7 @@ android {
 
 dependencies {
     implementation(libs.androidx.ui.android)
+    implementation(libs.androidx.ui.text.android)
     debugImplementation(compose.uiTooling)
 }
 

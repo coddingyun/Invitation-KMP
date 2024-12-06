@@ -2,6 +2,7 @@ package org.example.invitation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.material.Typography
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.PlatformTextStyle
 import androidx.compose.ui.text.font.FontFamily
@@ -30,11 +31,15 @@ val fontFamily
     get() = Typography().run {
         val fontFamily = FontFamily(
             Font(
-                Res.font.NotoSansKR_Medium,
+                Res.font.NotoColorEmoji,
                 weight = FontWeight.Medium,
             ),
             Font(
-                Res.font.NotoSansKR_Bold,
+                Res.font.NotoSansKR_Medium,
+                weight = FontWeight.Normal,
+            ),
+            Font(
+                Res.font.Hahmlet_SemiBold,
                 weight = FontWeight.Bold,
             ),
             Font(
@@ -50,13 +55,10 @@ val fontFamily
                 weight = FontWeight.Light,
             ),
             Font(
-                Res.font.Hahmlet_SemiBold,
+                Res.font.NotoSansKR_SemiBold,
                 weight = FontWeight.SemiBold,
             ),
-            Font(
-                Res.font.NotoSansKR_Medium,
-                weight = FontWeight.Normal,
-            ),
+
             Font(
                 Res.font.NotoColorEmoji,
                 weight = FontWeight.Thin,
@@ -84,16 +86,22 @@ val fontFamily
             ),
             h3 = h3.copy(
                 fontFamily = fontFamily,
-                fontWeight = FontWeight.SemiBold,
+                fontWeight = FontWeight.Bold,
                 color = Color.White,
             ),
             h4 = h4.copy(fontFamily = fontFamily),
             h5 = h5.copy(
                 fontFamily = fontFamily,
-                fontWeight = FontWeight.SemiBold,
+                fontWeight = FontWeight.Bold,
                 color = Color(0xFFCBED9A),
             ),
-            h6 = h6.copy(fontFamily = fontFamily),
+            h6 = h6.copy(
+                fontFamily = fontFamily,
+                color = Color.White,
+                //fontWeight = FontWeight.Bold,
+                fontSize = 18.sp,
+                lineHeight = 26.5.sp
+            ),
             subtitle1 = subtitle1.copy(
                 fontFamily = fontFamily,
                 color = Color(0xFF9A70E2),
@@ -110,7 +118,7 @@ val fontFamily
                 fontFamily = fontFamily,
                 fontWeight = FontWeight.Thin,
                 color = Color.White,
-                letterSpacing = (-1).sp,
+                letterSpacing = (-1.5).sp,
 //                platformStyle = PlatformTextStyle(
 //                    emojiSupportMatch = EmojiSupportMatch.None
 //                )
@@ -125,7 +133,7 @@ val fontFamily
             ),
             caption = caption.copy(
                 fontFamily = fontFamily,
-                color = Color.Black,
+                color = Color.White,
                 fontWeight = FontWeight.Medium,
                 fontSize = 26.sp,
                 lineHeight = 34.sp
@@ -133,7 +141,7 @@ val fontFamily
             overline = overline.copy(
                 fontFamily = fontFamily,
                 color = Color.White,
-                fontWeight = FontWeight.Medium,
+                fontWeight = FontWeight.Normal,
                 fontSize = 18.sp,
                 lineHeight = 26.5.sp
             )

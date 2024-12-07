@@ -66,6 +66,8 @@ kotlin {
             implementation(compose.components.uiToolingPreview)
             implementation(libs.androidx.lifecycle.viewmodel)
             implementation(libs.androidx.lifecycle.runtime.compose)
+            //implementation("io.github.ilyapavlovskii:youtubeplayer-compose:2024.02.25")
+            //implementation("network.chaintech:compose-multiplatform-media-player:1.0.16")
 //            implementation("com.google.android.gms:play-services-maps:18.1.0")
 //            implementation("com.google.android.gms:play-services-location:21.0.1")
 //            implementation("com.google.maps.android:maps-compose:4.4.1")

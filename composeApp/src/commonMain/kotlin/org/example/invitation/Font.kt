@@ -92,7 +92,7 @@ val fontFamily
             h4 = h4.copy(fontFamily = fontFamily),
             h5 = h5.copy(
                 fontFamily = fontFamily,
-                fontWeight = FontWeight.Bold,
+                fontWeight = FontWeight.Thin,
                 color = Color(0xFFCBED9A),
             ),
             h6 = h6.copy(
@@ -116,14 +116,20 @@ val fontFamily
             ),
             body1 = body1.copy(
                 fontFamily = fontFamily,
-                fontWeight = FontWeight.Thin,
+                fontWeight = FontWeight.Normal,
                 color = Color.White,
-                letterSpacing = (-1.5).sp,
+                fontSize = 15.sp,
+                //letterSpacing = (-1.5).sp,
 //                platformStyle = PlatformTextStyle(
 //                    emojiSupportMatch = EmojiSupportMatch.None
 //                )
             ),
-            body2 = body2.copy(fontFamily = fontFamily),
+            body2 = body2.copy(
+                fontFamily = fontFamily,
+                fontWeight = FontWeight.Bold,
+                color = Color.White,
+                fontSize = 12.sp,
+            ),
             button = button.copy(
                 fontFamily = fontFamily,
                 color = Color.White,

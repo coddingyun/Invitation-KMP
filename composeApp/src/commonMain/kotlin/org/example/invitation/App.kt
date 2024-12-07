@@ -2,6 +2,7 @@ package org.example.invitation
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -9,10 +10,13 @@ import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.Button
+import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.material3.windowsizeclass.ExperimentalMaterial3WindowSizeClassApi
@@ -21,6 +25,7 @@ import androidx.compose.material3.windowsizeclass.calculateWindowSizeClass
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.platform.LocalFontFamilyResolver
@@ -30,6 +35,7 @@ import org.jetbrains.compose.resources.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import invitation.composeapp.generated.resources.NotoColorEmoji
@@ -117,7 +123,7 @@ fun MainViews() {
                 Text(
                     """
                         2024년 12월 25일 (수)
-                        대전
+                        09:00 AM 대전
                     """.trimIndent(),
                     style = fontFamily.body2,
                     color = Color(0xFFDBB683),
@@ -154,7 +160,7 @@ fun MainViews() {
             }
 
             item {
-                SubTitle("준비물")
+                SubTitle("💚준비물💚")
             }
 
             item {
@@ -166,17 +172,26 @@ fun MainViews() {
                         🌟정신 머리와 체력🌟
                     """.trimIndent(),
                     style = fontFamily.body1,
-                    fontSize = 15.sp,
                     textAlign = TextAlign.Center
                 )
             }
 
             item {
-                SubTitle("드레스 코드")
+                SubTitle("💃🏼드레스 코드💃🏼")
             }
 
             item {
-                SubTitle("갤러리")
+                Row (
+                    horizontalArrangement = Arrangement.spacedBy(20.dp)
+                ) {
+                    DressCodeCircle(Color.Red, "Red", Color.White)
+                    DressCodeCircle(Color(0xFF126333), "Green", Color.White)
+                    DressCodeCircle(Color.White, "White", Color.Red)
+                }
+            }
+
+            item {
+                SubTitle("❄️Winter Gallery❄️")
             }
 
             item {
@@ -215,11 +230,11 @@ fun MainViews() {
                 Text(
                     //"Hello $EMOJI_TEXT",
                     """
-                        이번에 갤러리를 더 채워봐요 ~ 💙
+                        이번 크리스마스에 갤러리를 더 채워봐요
+                        💚💚💚
                     """.trimIndent(),
                     style = fontFamily.body1,
                     modifier = Modifier.padding(vertical = 15.dp),
-                    fontSize = 15.sp,
                     textAlign = TextAlign.Center
                 )
             }
@@ -240,7 +255,10 @@ fun MainViews() {
 
             item {
                 val uriHandler = LocalUriHandler.current
-                Row {
+                Row(
+                    horizontalArrangement = Arrangement.spacedBy(20.dp),
+                    modifier = Modifier.padding(bottom = 10.dp),
+                ){
                     CustomButton("네이버 지도") {
                             uriHandler.openUri("https://naver.me/F5DpdrkZ")
                     }
@@ -259,7 +277,10 @@ fun SubTitle(text: String) {
     Text(
         text,
         style = fontFamily.h5,
-        modifier = Modifier.padding(top = 80.dp, bottom = 30.dp),
+        modifier = Modifier.padding(
+            top = 150.dp,
+            bottom = 30.dp
+        ),
     )
 }
 
@@ -281,8 +302,32 @@ fun GalleryImage(res: DrawableResource, rotationLevel: Float) {
 @Composable
 fun CustomButton(buttonText: String, handleClick: () -> Unit) {
     Button(
-        onClick = handleClick
+        onClick = handleClick,
+        colors = ButtonDefaults.buttonColors(
+            backgroundColor = Color(0xFF126333),
+            contentColor = Color.White,
+        )
     ) {
         Text(buttonText)
+    }
+}
+
+@Composable
+fun DressCodeCircle(color: Color, text: String, textColor: Color) {
+    Box (
+        modifier = Modifier
+            .size(50.dp)
+            .clip(CircleShape)
+            .background(color),
+        contentAlignment = Alignment.Center,
+    )
+    {
+        Text(
+            text,
+            //style = fontFamily.body2,
+            color = textColor,
+            fontWeight = FontWeight.SemiBold,
+            fontSize = 14.sp,
+        )
     }
 }

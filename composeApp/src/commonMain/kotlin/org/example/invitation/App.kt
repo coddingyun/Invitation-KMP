@@ -134,13 +134,6 @@ fun MainViews() {
                         여러분을 초대합니다.
                     """.trimIndent(),
                     style = fontFamily.overline,
-//                    style = TextStyle(
-//                        fontFamily = FontFamily(
-//                            Font(Res.font.NotoSansKR_Regular, weight = FontWeight.Medium)
-//                        ),
-//                        color = Color.White,
-//                        fontSize = 16.sp,
-//                    ),
                     modifier = Modifier.padding(vertical = 60.dp),
                     textAlign = TextAlign.Center
                 )

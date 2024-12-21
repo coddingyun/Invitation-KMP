@@ -1,5 +1,7 @@
 package org.example.invitation
 
+//import VideoPlayer
+//import MediaPlayer
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -28,26 +30,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
-import androidx.compose.ui.platform.LocalFontFamilyResolver
 import androidx.compose.ui.platform.LocalUriHandler
-import androidx.compose.ui.text.TextStyle
-import org.jetbrains.compose.resources.Font
-import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import invitation.composeapp.generated.resources.NotoColorEmoji
-import invitation.composeapp.generated.resources.NotoSansKR_Regular
 import org.jetbrains.compose.resources.painterResource
-import org.jetbrains.compose.ui.tooling.preview.Preview
-
 import invitation.composeapp.generated.resources.Res
 import invitation.composeapp.generated.resources.christmas_banner
 import invitation.composeapp.generated.resources.daejeon
-import invitation.composeapp.generated.resources.gallery_1
-import invitation.composeapp.generated.resources.gallery_2
 import invitation.composeapp.generated.resources.gallery_image1
 import invitation.composeapp.generated.resources.gallery_image2
 import invitation.composeapp.generated.resources.gallery_image3
@@ -66,14 +57,6 @@ class App {
         }
     }
 }
-
-//@Composable
-//@Preview
-//fun App() {
-//    MaterialTheme {
-//        MainViews()
-//    }
-//}
 
 @OptIn(ExperimentalMaterial3WindowSizeClassApi::class)
 @Composable
@@ -133,6 +116,10 @@ fun MainViews() {
                 )
             }
 
+//            item {
+//                YoutubePlayer()
+//            }
+
             item {
                 Text(
                     """
@@ -165,7 +152,6 @@ fun MainViews() {
 
             item {
                 Text(
-                    //"Hello $EMOJI_TEXT",
                     """
                         🎁1만원 이하의 랜덤 선물🎁
                         🙊쌓아둔 재미난 썰들🙊
@@ -230,8 +216,9 @@ fun MainViews() {
                 Text(
                     //"Hello $EMOJI_TEXT",
                     """
+                        💚️❤️💚
                         이번 크리스마스에 갤러리를 더 채워봐요
-                        💚💚💚
+                        ❤️💚❤️
                     """.trimIndent(),
                     style = fontFamily.body1,
                     modifier = Modifier.padding(vertical = 15.dp),
@@ -331,3 +318,12 @@ fun DressCodeCircle(color: Color, text: String, textColor: Color) {
         )
     }
 }
+
+//@Composable
+//fun YoutubePlayer() {
+//    VideoPlayer(
+//        modifier = Modifier.fillMaxWidth(),
+//        url = "https://www.youtube.com/watch?v=RCJ0W6PvHAE",
+//        autoPlay = true,
+//    )
+//}
